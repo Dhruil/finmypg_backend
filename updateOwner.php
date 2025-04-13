@@ -68,7 +68,7 @@ $sql_owner = "UPDATE Owner
 $result_owner =  $conn->query($sql_owner);
 
 // Update Address Table
-$sql_address = "UPDATE Address 
+$sql_address = "UPDATE address 
                 SET residence_name = '$residence_name', street = '$street', area = '$area', 
                     city = '$city', state = '$state', zip = '$zip'  
                 WHERE address_id = (SELECT address_id FROM Owner WHERE owner_id = '$owner_id')";
@@ -79,7 +79,7 @@ $sql = "
         o.owner_id, o.name AS owner_name, o.mobile, o.email, o.password, o.image,o.no_of_pg_hold, o.gender, o.aadhar_card,
         a.residence_name, a.street, a.area, a.city, a.state, a.zip
     FROM Owner o
-    INNER JOIN Address a ON o.address_id = a.address_id
+    INNER JOIN address a ON o.address_id = a.address_id
     WHERE o.owner_id = '$owner_id'
 ";
 if ($result_owner && $result_address) {
