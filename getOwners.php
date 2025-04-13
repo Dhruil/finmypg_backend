@@ -21,7 +21,7 @@ $sql = "
         o.owner_id, o.name AS owner_name, o.mobile, o.email, o.password, o.image,o.no_of_pg_hold, o.gender, o.aadhar_card,
         a.residence_name, a.street, a.area, a.city, a.state, a.zip
     FROM Owner o
-    INNER JOIN Address a ON o.address_id = a.address_id
+    INNER JOIN address a ON o.address_id = a.address_id
     WHERE o.owner_id = '$owner_id'
 ";
 
