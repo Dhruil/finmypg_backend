@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
 
         $address_id = $row["address_id"];
-        $address_query = "SELECT * FROM Address WHERE address_id = '$address_id'";
+        $address_query = "SELECT * FROM address WHERE address_id = '$address_id'";
         $address_result = $conn->query($address_query);
         $address = "";
         if ($address_result->num_rows > 0) {
